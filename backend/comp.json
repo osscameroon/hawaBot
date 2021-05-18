@@ -1,0 +1,17 @@
+[{
+    "id":2,
+    "type":"A",
+    "parent": 1,
+    "text":"Bring developers together",
+    "date":"18/05/2021"
+   
+},
+
+{
+    "id":3,
+    "type":"Q",
+    "parent": 1,
+    "text":"founders?",
+    "date":"18/05/2021"
+
+}]
