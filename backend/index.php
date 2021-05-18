@@ -1,13 +1,20 @@
 <?php
+  // configuration file
   include_once("config.php");
-  $query = "SELECT * FROM `demo`";
-  $result = mysqli_query($con, $query);
 
-  $arr = array(); // create an array to loop over results and convert mysql data to an array
-  while($row = mysqli_fetch_assoc($result)){
-    $arr[] = $row;
+
+  // The array of questions
+  $result = array();
+  $result['questions'] = [];
+
+  // query
+  $query = "SELECT * FROM `demo`";
+  // using PDO...
+  $req = $con->query($query);
+  while($row = $req->fetch()){
+    $result['questions'][] = $row;
   }
 
-  echo json_encode($arr); // conver php array to json string
-
+  /// conver php array to json string
+  echo json_encode($result);
 ?>

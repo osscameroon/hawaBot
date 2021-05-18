@@ -1,10 +1,12 @@
 <?php
+    // configuration file
+    include_once("config.php");
 
-    include_once("config.php");// configuration file
 
-    $json_data = file_get_contents("comp.json"); // read json file in php
-    $data = json_decode($json_data, true); // convrts json data to php array
-
+    // read json file in php
+    $json_data = file_get_contents("comp.json");
+    // convrts json data to php array
+    $data = json_decode($json_data, true);
 
     // get details
     foreach($data as $row){
@@ -12,13 +14,13 @@
         $type = $data['type'];
         $parent = $data['parent'];
         $text = $data['text'];
-        $date = $data['date'];
     }
 
+    //insert sql query
+    $sql = "INSERT INTO demo(id, `type`, parent, `text`) VALUES ('$id', '$type', '$parent', '$text')";
 
-    //insert
-    $sql = "INSERT INTO demo(id, type, parent, text, date) VALUES ('$id', '$type', '$parent', '$text' '$date')";
+    // We execute the query
+    $con->query($sql);
 
-
-    mysqli_query($con, $sql);
+    echo "All questions saved !"
 ?>
