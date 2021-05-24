@@ -15,6 +15,6 @@
     $result['questions'][] = $row;
   }
 
-  /// conver php array to json string
+  /// convert php array to json string
   echo json_encode($result);
 ?>

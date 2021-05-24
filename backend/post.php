@@ -4,8 +4,8 @@
 
 
     // read json file in php
-    $json_data = file_get_contents("comp.json");
-    // convrts json data to php array
+   /* $json_data = file_get_contents("comp.json");
+    // convets json data to php array
     $data = json_decode($json_data, true);
 
     // get details
@@ -16,16 +16,17 @@
         $id = $d['id'];
         $type = $d['type'];
         $parent = $d['parent'];
-        $text = $d['text'];
+        $text = $d['text'];*/
 
         //insert sql query
-        $sql = "INSERT INTO demo(id, `type`, parent, `text`) VALUES ($id, '$type', $parent, '$text')";
+        $sql = "INSERT INTO demo(id, `type`, parent, `text`) VALUES (1, 'Q', 1, 'Goals of Oss'),
+         (2, 'A',2,'Founders'),
+         (3, 'Q', 2, 'Bring developers together')";
         
-        echo $sql;
+        
         // We execute the query
         $con->query($sql);
-    }
+   // }
 
-    
-    echo "All questions saved !"
+    echo "All questions saved !";
 ?>
