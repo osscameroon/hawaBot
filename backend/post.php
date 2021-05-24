@@ -19,7 +19,7 @@
         $text = $d['text'];*/
 
         //insert sql query
-        $sql = "INSERT INTO demo(id, `type`, parent, `text`) VALUES (1, 'Q', 1, 'Goals of Oss'),
+        $sql = "INSERT INTO ans_ques(id, `type`, parent, `text`) VALUES (1, 'Q', 1, 'Goals of Oss'),
          (2, 'A',2,'Founders'),
          (3, 'Q', 2, 'Bring developers together')";
         

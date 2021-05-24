@@ -2,7 +2,7 @@
     $host = "localhost";
     $login = "root";
     $password = "";
-    $database = "osscameroon";
+    $database = "hawabot";
 
     try {
         // setting the connection using PDO

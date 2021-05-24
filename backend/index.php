@@ -8,7 +8,7 @@
   $result['questions'] = [];
 
   // query
-  $query = "SELECT * FROM `demo`";
+  $query = "SELECT * FROM `ans_ques`";
   // using PDO...
   $req = $con->query($query);
   while($row = $req->fetch()){
