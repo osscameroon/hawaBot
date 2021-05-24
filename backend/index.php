@@ -2,6 +2,13 @@
   // configuration file
   include_once("config.php");
 
+  function format_question($row){
+    foreach($row as $key => $value)
+      if (is_int($key))
+        unset($row[$key]);
+  
+    return $row;
+  }
 
   // The array of questions
   $result = array();
@@ -12,7 +19,7 @@
   // using PDO...
   $req = $con->query($query);
   while($row = $req->fetch()){
-    $result['questions'][] = $row;
+    $result['questions'][] = format_question($row);
   }
 
   /// convert php array to json string
