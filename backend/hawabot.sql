@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 18, 2021 at 12:59 PM
--- Server version: 10.3.27-MariaDB-0+deb10u1
--- PHP Version: 7.3.27-1~deb10u1
+-- Host: 127.0.0.1
+-- Generation Time: May 24, 2021 at 09:59 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,15 +25,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `demo`
+-- Table structure for table `ans_ques`
 --
 
-CREATE TABLE `demo` (
+CREATE TABLE `ans_ques` (
   `id` int(11) NOT NULL,
-  `type` varchar(200) NOT NULL,
+  `type` varchar(1) NOT NULL,
   `parent` int(11) NOT NULL,
   `text` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -41,9 +41,9 @@ CREATE TABLE `demo` (
 --
 
 --
--- Indexes for table `demo`
+-- Indexes for table `ans_ques`
 --
-ALTER TABLE `demo`
+ALTER TABLE `ans_ques`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -51,10 +51,10 @@ ALTER TABLE `demo`
 --
 
 --
--- AUTO_INCREMENT for table `demo`
+-- AUTO_INCREMENT for table `ans_ques`
 --
-ALTER TABLE `demo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `ans_ques`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
