@@ -1,24 +1,20 @@
 [
     {
-        "id":1,
         "type":"A",
         "parent": 1,
         "text":"Bring developers together"
     },
     {
-        "id":2,
         "type":"Q",
         "parent": 1,
         "text":"founders?"
     },
     {
-        "id":3,
         "type":"A",
         "parent":2,
         "text":"Goals of Oss"
     },
     {
-        "id":4,
         "type":"A",
         "parent":1,
         "text":"How can I help you?"
