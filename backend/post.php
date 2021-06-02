@@ -18,7 +18,9 @@
         $text = $d['text']; 
 
         //insert sql query
-        $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type."', ".$parent.", '".$text."')";
+        
+        $sql = "INSERT IGNORE INTO ans_ques(`type`, parent, `text`) VALUES ('".$type."', ".$parent.", '".$text."')";
+    
         
         // We execute the query
         $con->query($sql);
