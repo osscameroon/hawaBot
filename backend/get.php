@@ -1,27 +1,37 @@
-<?php
-  // configuration file
-  include_once("config.php");
+<?php 
+    include_once("config.php");
 
-  function format_question($row){
-    foreach($row as $key => $value)
-      if (is_int($key))
-        unset($row[$key]);
-  
-    return $row;
-  }
+    $result = array();
+   // if exists($id){
 
-  // The array of questions
-  $result = array();
-  $result['questions'] = [];
+        if (isset($_GET["id"])){
+            $id = $_GET["id"];
+            $result["children"] = [];
+    
+            $sql =  "SELECT *, (SELECT `text` FROM ".$table." WHERE id=".$id.") as parent_text FROM ".$table." WHERE `parent`=".$id;
+        
+            // using PDO...
+            $req = $con->query($sql);
+            while($row = $req->fetch()){
+                $result["children"][] = remove_id_numbers($row);
+            }
+            $result["status"] = "success";
+        }else{
+            $result["status"] = "error";
+            $result["message"] = "Missing parameter id";
 
-  // query
-  $query = "SELECT FROM `ans_ques` WHERE id = 2";
-  // using PDO...
-  $req = $con->query($query);
-  //while($row = $req->fetch()){
-    $result['questions'][] = format_question($row);
-  //}
+        } 
+   // } else{
+     //   echo "this id does not exist";
+   // }
 
-  /// convert php array to json string
-  echo json_encode($result);
+    
+        
+
+   
+    
+
+
+    /// convert php array to json string
+    echo json_encode($result);
 ?>

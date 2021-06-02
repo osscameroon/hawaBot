@@ -6,6 +6,7 @@
     $password = "";
     $database = "hawabot";
 
+    $table = "ans_ques";
 
     try {
         // setting the connection using PDO
@@ -16,9 +17,12 @@
     }
 
 
-
-       
-    
-
+    function remove_id_numbers($row){
+        foreach($row as $key => $value)
+          if (is_int($key))
+            unset($row[$key]);
+      
+        return $row;
+    }
     
 ?>

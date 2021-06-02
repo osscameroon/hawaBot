@@ -11,8 +11,7 @@ $database = new Database();
 $db = $database->getConnection();
 $result = new Ques_ans($db);
 
-$json_data = file_get_contents("php://input");
-$data = json_decode($json_data);
+ $data = json_decode($json_data);
 
 //make sure data is not empty
 if(
@@ -23,7 +22,9 @@ if(
     // set value
     $result->type = $data->type;
     $result->parent = $data->parent;
-    $result->text = $data->text;
+    $result->text = $data->
+    
+     ;
 
     //add a question or answer
     if($result->create()){

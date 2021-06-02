@@ -6,10 +6,10 @@
     // The array of questions
     $result = array();
 
-     // read json file in php
-     $json_data = file_get_contents("comp.json");
-     // convets json data to php array
-     $data = json_decode($json_data, true);
+    // read json file in php
+    $json_data = file_get_contents("php://input");
+    // convets json data to php array
+    $data = json_decode($json_data, true);
 
      //get details
     foreach($data as $d){
@@ -29,10 +29,4 @@
      // convert php array to json string
      echo json_encode($result);
 
-
-    $json = file_get_contents('php://input');
-
-    // convert it in php object
-    $data = json_decode($json);
-    print_r($data);
 ?>
