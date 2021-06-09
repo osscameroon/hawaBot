@@ -11,46 +11,24 @@
     // convets json data to php array
     $data = json_decode($json_data, true);
 
-     //get details
+    //get details
     foreach($data as $d){
         $type = $d['type'];
         $parent = $d['parent'];
         $text = $d['text']; 
         
-     
-       
-       if (isset($_GET['id']))
-       {
-           $id = $_GET['id'];
-       }
-        
-       $select_id = "SELECT 'id' FROM ans_ques ";
-       $res = $con->query($select_id);
-       
-       $result = array($res);
-       $result['id'] = []; 
-       print_r($res);
-
-       foreach($result as $value){
-           if($parent == $value){
-              $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type.", ".$parent.", '".$text."')";
-        
-            
-             // We execute the query
-              $con->query($sql);
-            
-            }else{
-               $result["status"] = "failed";
-               $result["message"] = "Cannot insert orphan question";
-            }
-        }
-       
-      
+        $sql_query_search_aprent = "SELECT COUNT(*) FROM ans_ques WHERE 'id' = $parent ";
+        $res = $con->query($sql_query_search_aprent);
+        $count = $res->fetchColumn();
+        if ($count > 0){
+            $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type.", ".$parent.", '".$text."')";
+            // We execute the query
+            $con->query($sql);
+        }      
     }
 
      $result["status"] = "success";
      $result["message"] = "All questions saved !";
      // convert php array to json string
      echo json_encode($result);
-
 ?>
