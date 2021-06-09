@@ -18,24 +18,26 @@
         $text = $d['text']; 
         
      
-       $result = array();
+       
        if (isset($_GET['id']))
        {
            $id = $_GET['id'];
        }
         
-       $select_id = "SELECT * FROM ans_ques WHERE 'id' = $id ";
+       $select_id = "SELECT 'id' FROM ans_ques ";
        $res = $con->query($select_id);
+       
        $result = array($res);
        $result['id'] = []; 
-       print_r($selected_id);
+       print_r($res);
+
        foreach($result as $value){
            if($parent == $value){
-             $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type.", ".$parent.", '".$text."')";
+              $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type.", ".$parent.", '".$text."')";
         
             
              // We execute the query
-             $con->query($sql);
+              $con->query($sql);
             
             }else{
                $result["status"] = "failed";
