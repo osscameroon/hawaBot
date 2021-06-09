@@ -12,14 +12,26 @@
         // using PDO...
         $req = $con->query($sql);
         $count = 0;
+
         while($row = $req->fetch())
         {
+            foreach($row as $key=>$value){
+                if("parent_text" == $key){
+                    $result["parent_text"]=$row[$key];
+                    unset($row[$key]);
+                }
+            } 
+            //remove id
             $flag = remove_id_numbers($row);
             $count = $count + count($flag);
             $result["children"][] = $flag;
         }
-        if($count == 0) 
+        if($count == 0) {
+            unset($result["children"]);
             $result["status"] = "failed";
+            $result["message"] = "not found";
+        }
+           
         else 
             $result["status"] = "success";
         
