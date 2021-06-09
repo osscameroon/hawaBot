@@ -16,12 +16,14 @@
         $type = $d['type'];
         $parent = $d['parent'];
         $text = $d['text']; 
-        
-        $sql_query_search_aprent = "SELECT COUNT(*) FROM ans_ques WHERE 'id' = $parent ";
+
+        $sql_query_search_aprent = "SELECT COUNT(*) FROM ans_ques WHERE `id` = $parent ";
+
         $res = $con->query($sql_query_search_aprent);
         $count = $res->fetchColumn();
+
         if ($count > 0){
-            $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type.", ".$parent.", '".$text."')";
+            $sql = "INSERT INTO ans_ques(`type`, parent, `text`) VALUES ('".$type."', ".$parent.", '".$text."')";
             // We execute the query
             $con->query($sql);
         }      
