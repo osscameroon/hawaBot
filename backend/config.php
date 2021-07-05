@@ -1,5 +1,6 @@
 <?php
     header("Content-Type:text/json; Charset=UTF-8");
+    header("Access-Control-Allow-Origin: *");
     
     $host = "localhost";
     $login = "root";
@@ -7,7 +8,8 @@
     $database = "hawabot";
 
     $table = "ans_ques";
-
+    
+    
     try {
         // setting the connection using PDO
         $con = new PDO('mysql:host='.$host.';dbname='.$database, $login, $password);
