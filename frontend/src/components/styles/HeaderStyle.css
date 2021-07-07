@@ -1,0 +1,25 @@
+.lmg{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: flex;
+}
+.head{
+    color: blue;
+    margin-left: 8px;
+    /* font-size: 1.2rem;
+    vertical-align: middle; */
+    
+    
+}
+.app-logo{
+    border-radius: 50px;
+    margin: 5;
+    vertical-align: middle;
+    box-sizing: border-box;
+    
+}
+
+.text{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold; 
+}

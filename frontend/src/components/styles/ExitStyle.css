@@ -1,0 +1,13 @@
+button.close{
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+}
+.close{
+    float: right;
+    font-size: 21px;
+    font-weight:  bold;
+    line-height: 1;
+    color: black;
+    opacity: .2;
+}

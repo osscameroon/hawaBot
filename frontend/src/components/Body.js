@@ -27,7 +27,7 @@ class Body extends Component {
         
       return (
         <div>
-          Children
+          
           {get_child.length?
           get_child.map(child => <div key={child.id}>{child.text}</div> ):
            null

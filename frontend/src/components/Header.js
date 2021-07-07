@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 //import logo from './img/logo.jpeg';
-import './HeaderStyle.css';
+import './styles/HeaderStyle.css';
 
 
 
@@ -19,12 +19,18 @@ const Header = ({text}) => {
   }, [currentText, text]);
   return (
     
-    <div className='lmg'>
-    <div><img src={window.location.hostname + './public/img/logo.jpeg'} className='App' alt='not found'/></div>
-    <h1 className='head'><b>OSS CAMEROON</b></h1>
-    
-     <div>{currentText}</div>
+    <div>
       
+    
+      <div className='lmg'>
+        <img src='/img/logo.jpeg' className='app-logo' alt='not found' width="40" height="40"/>
+        <h1 className='head'><b>OSS CAMEROON</b></h1>
+      </div>
+      
+      
+        <div className='text'>{currentText}</div>
+      
+       
     </div>
   );
 }
