@@ -6,8 +6,12 @@ button.close{
 .close{
     float: right;
     font-size: 21px;
-    font-weight:  bold;
     line-height: 1;
     color: black;
-    opacity: .2;
+    opacity: .6;
+    
+}
+.close:hover{
+    background-color:grey ;
+    color: black;
 }

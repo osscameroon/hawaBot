@@ -15,7 +15,7 @@ class Body extends Component {
            
             .then(response => {
                 console.log(response)
-                this.setState({get_child: response.data})
+                this.setState({get_child: response.data.children})
             })
             .catch(error => {
                 console.log(error)
@@ -24,11 +24,11 @@ class Body extends Component {
       
     render() {
         const {get_child} = this.state
-        
+        console.log("get_child:", get_child);
       return (
         <div>
           
-          {get_child.length?
+          {get_child && get_child.length?
           get_child.map(child => <div key={child.id}>{child.text}</div> ):
            null
           

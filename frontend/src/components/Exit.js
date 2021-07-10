@@ -4,19 +4,24 @@ import './styles/ExitStyle.css';
 
 export class Exit extends Component {
     
-   handleClick(){
-
-   }
+  handleClick = () => {
+       window.opener = null;
+       window.open('', '_self');
+       window.close();
+    
+  };
+      
+   
     
   render() {
     return (
      
       <div>
-       <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={()=> this.handleClick}>
-        <i className="fa fa-times" aria-hidden="true"></i>
-        <span className="close"></span>
-        x
-     </button>
+       <button type="button" className="close"  aria-label="Close" onClick={this.handleClick}>
+        
+        
+         x
+     </button> 
      </div>
     );
   }
