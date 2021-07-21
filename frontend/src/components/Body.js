@@ -27,13 +27,18 @@ class Body extends Component {
         console.log("get_child:", get_child);
       return (
         <div>
-          
-          {get_child && get_child.length?
-          get_child.map(child => <div key={child.id}>{child.text}</div> ):
-           null
-          
-  
-          }
+          <button type='Submit' className="btn-class">
+            Bring developers together
+          </button>
+          <div>
+            
+            {get_child && get_child.length?
+            get_child.map(child => <div key={child.id}>{child.text}</div> ):
+            null
+            
+    
+            }
+          </div>
         </div>
       );
     }
