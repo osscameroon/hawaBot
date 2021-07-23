@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './styles/BodyStyle.css';
 
 
 class Body extends Component {
@@ -7,8 +8,10 @@ class Body extends Component {
         super(props)
       
         this.state = {
-           get_child: []
+           get_child: [],
+           show_child: true, 
         }
+        this.handleClick = this.handleClick.bind(this)
       }
       componentDidMount(){
           axios.get('http://localhost:4000/hawaBot/backend/get.php?id=1')
@@ -21,23 +24,46 @@ class Body extends Component {
                 console.log(error)
             })
       }
+
+       handleClick() {
+       console.log("Hello")
+        if ({child.id} = 1){
+          this.setState (() => {
+            return {
+             show_child: false
+          }
+        });
+        
+      }
+        
+         
+       
+       }
       
     render() {
         const {get_child} = this.state
         console.log("get_child:", get_child);
+        const {show_child} = this.state.show_child;
+      
+       
       return (
         <div>
-          <button type='Submit' className="btn-class">
+         <div className="button">
+            <center><button type='Submit' className="btn-class" onClick={this.handleClick}>
             Bring developers together
-          </button>
+            </button> </center>
+         </div>
           <div>
+      {/* {this.state.show_child &&}*/ }
+              {
+                get_child && get_child.length?
+                get_child.map(child => <div key={child.id} onClick={() => {this.handleClick()}}> {child.text} </div> ): null
+              } : null
             
-            {get_child && get_child.length?
-            get_child.map(child => <div key={child.id}>{child.text}</div> ):
-            null
+             
+          
             
-    
-            }
+          
           </div>
         </div>
       );
