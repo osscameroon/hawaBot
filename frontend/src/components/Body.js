@@ -27,15 +27,15 @@ class Body extends Component {
 
        handleClick() {
        console.log("Hello")
-        if ({child.id} = 1){
+       // if ({child.id} = 1){
           this.setState (() => {
             return {
-             show_child: false
+             show_child: !this.state.show_child 
           }
         });
         
-      }
-        
+     // }
+       
          
        
        }
@@ -43,24 +43,24 @@ class Body extends Component {
     render() {
         const {get_child} = this.state
         console.log("get_child:", get_child);
-        const {show_child} = this.state.show_child;
+       // const {show_child} = this.state.show_child;
       
        
       return (
         <div>
          <div className="button">
-            <center><button type='Submit' className="btn-class" onClick={this.handleClick}>
+            <center><button type='Submit' className="btn-class" onClick={() => {this.handleClick()}} >
             Bring developers together
             </button> </center>
          </div>
           <div>
-      {/* {this.state.show_child &&}*/ }
-              {
+         { this.state.show_child ?  
+              
                 get_child && get_child.length?
-                get_child.map(child => <div key={child.id} onClick={() => {this.handleClick()}}> {child.text} </div> ): null
-              } : null
+                get_child.map(child => <div key={child.id}  onClick={() =>{ console.log("say hi");}}> {child.text} </div> ): null
+               : null
             
-             
+         }    
           
             
           
