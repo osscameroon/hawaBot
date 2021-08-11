@@ -1,41 +1,43 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
 
-export class PrevNext extends Component {
-  constructor(props) {
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = {isLoggedIn: false};
+function PrevNext() {
+  // fetch local JSON data
+  const [data, setData] = useState([]);
+  const getData=()=>{
+    fetch('data.json',{
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept' : 'application/json'
+      }
+    })
+    .then(function(response){
+      console.log(response)
+      return response.json();
+     })
+     .then(function(myJson){
+       console.log(myJson);
+       setData(myJson)
+     });
   }
-
-  handleLoginClick() {
-    this.setState({isLoggedIn: true});
-  }
-
-  handleLogoutClick() {
-    this.setState({isLoggedIn: false});
-  }
-
-  render() {
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
-    if (isLoggedIn) {
-      button = <LogoutButton onClick={this.handleLogoutClick} />;
-    } else {
-      button = <LoginButton onClick={this.handleLoginClick} />;
-    }
-
-    return (
-      <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
-      </div>
-    );
-  }
+  //call fetched data
+  useEffect(()=>{
+    getData()
+  }, [])
+  // function handleClick(props){
+  //   alert("Hello World")
+  // }
+  return (
+    <div>
+      {
+        data && data.length>0 && data.map((item) =><p>{item.text}</p>)
+      }
+    </div>
+  );
 }
 
-
 export default PrevNext;
+
+
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import parse from 'html-react-parser';
 import './styles/BodyStyle.css';
 
 
@@ -9,24 +10,27 @@ class Body extends Component {
       
         this.state = {
            get_child: [],
-           show_child: true, 
+           show_child: false, 
         }
         this.handleClick = this.handleClick.bind(this)
       }
       componentDidMount(){
-          axios.get('http://localhost:4000/hawaBot/backend/get.php?id=1')
+         this.getChildrenByParentID(1)
+      }
+      getChildrenByParentID(parentID){
+        axios.get(`http://localhost:4000/hawaBot/backend/get.php?id=${parentID}`)
            
-            .then(response => {
-                console.log(response)
-                this.setState({get_child: response.data.children})
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        .then(response => {
+            console.log(response)
+            this.setState({get_child: response.data.children})
+        })
+        .catch(error => {
+            console.log(error)
+        })
       }
 
        handleClick() {
-       console.log("Hello")
+       //console.log("Hello")
        // if ({child.id} = 1){
           this.setState (() => {
             return {
@@ -50,17 +54,19 @@ class Body extends Component {
         <div>
          <div className="button">
             <center><button type='Submit' className="btn-class" onClick={() => {this.handleClick()}} >
-            Bring developers together
+            Founders of Oss Cameroon
             </button> </center>
          </div>
           <div>
+          
          { this.state.show_child ?  
               
                 get_child && get_child.length?
-                get_child.map(child => <div key={child.id}  onClick={() =>{ console.log("say hi");}}> {child.text} </div> ): null
+                get_child.map(child => <div key={child.id}  onClick={() =>{ this.getChildrenByParentID(child.id)}}>{parse(child.text)} </div> ): null
                : null
             
-         }    
+         } 
+           
           
             
           

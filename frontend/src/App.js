@@ -1,8 +1,8 @@
 //import './styles/App.css';
 import Exit from './components/Exit';
 import Header from './components/Header';
-import Body from './components/Body';
-//import PrevNext from './components/PrevNext';
+//import Body from './components/Body';
+import PrevNext from './components/PrevNext';
 //import GetChildr from './components/GetChildr';
 
 
@@ -13,7 +13,8 @@ function App() {
     <div className="App">
        <Exit />
        <Header text = {'Welcome to hawaBot. The official FAQ bot for Oss Cameroon. We provide an answer to all your questions about OssCameroon!'}/>
-       <Body />
+       
+       <PrevNext />
        
        
        
