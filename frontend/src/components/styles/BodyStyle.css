@@ -1,0 +1,14 @@
+.btn-class{
+    padding: auto;
+    border-radius: 8px;
+    box-align: center;
+    border: 0px solid blue;
+    margin: auot;
+     
+}
+.button{
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
