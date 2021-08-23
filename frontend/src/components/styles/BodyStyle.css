@@ -1,14 +1,50 @@
-.btn-class{
-    padding: auto;
-    border-radius: 8px;
-    box-align: center;
-    border: 0px solid blue;
-    margin: auot;
-     
-}
-.button{
+.questions-frame
+{
+	align-items: center;
+    display: flex;
     flex-direction: column;
-    position: relative;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
+
+.question-answer
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	width: 50%;
+}
+
+.question
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top:1rem;
+	background-color: rgba(200, 200, 200, 1);
+	border: 2px solid black;
+	box-shadow: 0 0 3px black;
+
+	width: 100%;
+	padding: 10px 10px;
+}
+
+.symbol-button
+{
+	width: 1rem;
+	height: 1rem;
+	/* border-radius: 0.5rem; */
+	background-color: rgba(0, 0, 0, 0.3);
+	/* box-shadow: 0 0 5 black inset; */
+}
+
+.answer
+{
+	width: 100%;
+	background-color: blue;
+	color: white;
+	padding: 10px 10px;
+
+	display: none;
+}
+
