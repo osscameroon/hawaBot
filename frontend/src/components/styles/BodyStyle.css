@@ -22,8 +22,9 @@
 	justify-content: space-between;
 	margin-top:1rem;
 	background-color: rgba(200, 200, 200, 1);
-	border: 2px solid black;
-	box-shadow: 0 0 3px black;
+	border: 2px solid blue;
+	box-shadow: 0 0 3px blue;
+	border-radius: 5px;
 
 	width: 100%;
 	padding: 10px 10px;

@@ -3,15 +3,18 @@ import Data from './data.json'
 import './styles/BodyStyle.css'
 
 function openCloseAnswer(e)
-{
+{ 
   let element = e.target;
   console.log(element)
   if(element.tagName.toLowerCase() !== "div")
+  //returns the question
     element = element.parentElement
+  //returns the corresponding answer to the question
   element = element.nextElementSibling
   
-  
+  //gets the value of the id of the the HTML element associated with it. The IDs are returned as A1,...An. A is replaced with an empty string so that the id should be returned 
   const id = element.getAttribute("id").replace("A", "")
+  //the answers are made visible taking into the consideration the id gotten above
   if(element.getAttribute("visible").toLowerCase() === "true")
   {  
         element.setAttribute("visible", "false");
@@ -32,13 +35,13 @@ function PrevNext() {
   for(var s_itr = 0; s_itr < size; s_itr++)
     questionsAnswers.push({"question":Data.Questions[s_itr].text, "answer":Data.Answers[s_itr].text, "id":s_itr+1})
 
-  let  questionsAnswersHTML=questionsAnswers.map((questionAnswer)=> <div key = { Math.random()} className = "question-answer" >
-  <div key = {"Q" + questionAnswer.id +  Math.random()} className = "question" id = {"Q" + questionAnswer.id} onClick = {openCloseAnswer}>
-    <span key = {"Qt" + questionAnswer  +  Math.random()}>{questionAnswer.question}</span>
-    <span key = {"Qs" + questionAnswer.id  +  Math.random()} className = "symbol-button" id={"Qs" + questionAnswer.id}>^</span>
+  let  questionsAnswersHTML=questionsAnswers.map((questionAnswer, index)=> <div key = {index} className = "question-answer" >
+  <div key = {"Q" + questionAnswer.id +  {index}} className = "question" id = {"Q" + questionAnswer.id} onClick = {openCloseAnswer}>
+    <span key = {"Qt" + questionAnswer  +  {index}}>{questionAnswer.question}</span>
+    <span key = {"Qs" + questionAnswer.id  +  {index}} className = "symbol-button" id={"Qs" + questionAnswer.id}>^</span>
   </div>
 
-  <span key = {"A" + questionAnswer.id + Math.random()} className = "answer" id = {"A" + questionAnswer.id} visible = "false">{questionAnswer.answer}</span>
+  <span key = {"A" + questionAnswer.id + {index}} className = "answer" id = {"A" + questionAnswer.id} visible = "false">{questionAnswer.answer}</span>
   </div>)
   
   

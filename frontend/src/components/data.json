@@ -4,34 +4,34 @@
        "id": 0,
        "text": "Who are oss cameroon owners",
        "type": "Q",
-       "children": [3]
+       "child": ["A0"]
     },
     
     {
        "id": 1,
        "text": "About Oss Cameroon",
        "type": "Q",
-       "children": [4, 5]
+       "child": ["A1"]
     },
     
     {
        "id": 2,
        "text": "Goals",
        "type": "Q",
-       "children": [6]
+       "child": ["A2"]
     },
     {
       "id": 3,
       "text": "Vision",
       "type": "Q",
-      "children": []
+      "child": ["A3"]
     },
    
     {
       "id": 4,
       "text": "Our target",
       "type": "Q",
-      "children": []
+      "child": ["A4"]
     }
   ],
 
@@ -39,32 +39,27 @@
     {
       "id": 0,
       "text": "Sanix Darker, Elhmmn, Eric, Yvan, Sherlock Wisdom",
-      "type": "A",
-      "children": [2, 4]
+      "type": "A"
    },
    {
     "id": 1,
     "text": "Open Source Community by Cameroonian developers",
-    "type": "A",
-    "children": []
+    "type": "A"
  },
  {
   "id": 2,
   "text": "Bring developers together, Cultivate the habit of contributing to open source projects in the Cameroonian developer ",
-  "type": "A",
-  "children": []
+  "type": "A"
 },
 {
   "id": 3,
   "text": "Promote talent and know-how of Cameroonian by using our technical knowledge to ring solutions to problems found in our society ",
-  "type": "A",
-  "children": []
+  "type": "A"
 },
 {
   "id": 4,
   "text": "The Cameroon tech community. Both anglophones and francophones",
-  "type": "A",
-  "children": []
+  "type": "A"
 }
   ]
 }

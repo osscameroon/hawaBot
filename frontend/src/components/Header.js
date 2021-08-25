@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-//import logo from './img/logo.jpeg';
 import './styles/HeaderStyle.css';
 
 
