@@ -1,65 +1,23 @@
-{
-  "Questions": [ 
-    {
-       "id": 0,
-       "text": "Who are oss cameroon owners",
-       "type": "Q",
-       "child": ["A0"]
-    },
-    
-    {
-       "id": 1,
-       "text": "About Oss Cameroon",
-       "type": "Q",
-       "child": ["A1"]
-    },
-    
-    {
-       "id": 2,
-       "text": "Goals",
-       "type": "Q",
-       "child": ["A2"]
-    },
-    {
-      "id": 3,
-      "text": "Vision",
-      "type": "Q",
-      "child": ["A3"]
-    },
-   
-    {
-      "id": 4,
-      "text": "Our target",
-      "type": "Q",
-      "child": ["A4"]
-    }
-  ],
-
-  "Answers":[
-    {
-      "id": 0,
-      "text": "Sanix Darker, Elhmmn, Eric, Yvan, Sherlock Wisdom",
-      "type": "A"
-   },
-   {
-    "id": 1,
-    "text": "Open Source Community by Cameroonian developers",
-    "type": "A"
- },
- {
-  "id": 2,
-  "text": "Bring developers together, Cultivate the habit of contributing to open source projects in the Cameroonian developer ",
-  "type": "A"
-},
-{
-  "id": 3,
-  "text": "Promote talent and know-how of Cameroonian by using our technical knowledge to ring solutions to problems found in our society ",
-  "type": "A"
-},
-{
-  "id": 4,
-  "text": "The Cameroon tech community. Both anglophones and francophones",
-  "type": "A"
-}
+[
+  {
+     "text": "who are oss cameroon owners",
+     "answer": "Sanix and Eric",
+     "children": [
+      {"text": "How did they meet", "answer": "on twitter"},
+     {"text": "Why is Sanix so good at programming", "answer": "he likes panda"}
+     ]
+  },
+  
+  {
+     "text": "What is their goal",
+     "answer": "They don't know",
+     "children":[
+       {"text": "Vision", "answer": "Promote talent and know-how of Cameroonian developers"},
+       {"text":"Taget", "answer":"The Cameroon tech community"}
+     ]
+  },
+  {
+    "text": "Projects",
+    "answer": "Visit github page"
+  }
   ]
-}
