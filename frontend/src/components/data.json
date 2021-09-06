@@ -1,23 +1,24 @@
-[
-  {
-     "text": "who are oss cameroon owners",
-     "answer": "Sanix and Eric",
-     "children": [
-      {"text": "How did they meet", "answer": "on twitter"},
-     {"text": "Why is Sanix so good at programming", "answer": "he likes panda"}
-     ]
-  },
+ [
+      {
+         "text": "who are oss cameroon owners",
+         "answer": "Sanix and Eric",
+         "children": [
+          {"text": "How did they meet", "answer": "on twitter"},
+         {"text": "Why is Sanix so good at programming", "answer": "he likes panda"}
+         ]
+      },
+      
+      {
+         "text": "What is their goal",
+         "answer": "They don't know",
+         "children":[
+           {"text": "Vision", "answer": "Promote talent and know-how of Cameroonian developers"},
+           {"text":"Taget", "answer":"The Cameroon tech community"}
+         ]
+      },
+      {
+        "text": "Projects",
+        "answer": "Visit github page"
+      }
+      ]
   
-  {
-     "text": "What is their goal",
-     "answer": "They don't know",
-     "children":[
-       {"text": "Vision", "answer": "Promote talent and know-how of Cameroonian developers"},
-       {"text":"Taget", "answer":"The Cameroon tech community"}
-     ]
-  },
-  {
-    "text": "Projects",
-    "answer": "Visit github page"
-  }
-  ]
