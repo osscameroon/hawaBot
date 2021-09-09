@@ -18,20 +18,23 @@ const PrevNext = () => {
 
   useEffect(()=>{
     let currentTab = [];
-    faq.forEach(item => {
+    faq.forEach((item, index) => {
       currentTab.push({
         question: item.text,
-        answer: item.answer,
+        answer: item.answer
       });
-      (item.children ?? []).forEach(item1 => {
+      if(index === selectedID){
+        (item.children ?? []).forEach(item1 => {
         currentTab.push({
           question: item1.text,
           answer: item1.answer,
         });
       });
+      }
+      
     });
     setTab(currentTab);
-  }, []);
+  }, [selectedID]);
 
   return (
     <div>
@@ -42,7 +45,6 @@ const PrevNext = () => {
               <div
                 className="question"
                 onClick={() => { 
-                  //alert(true);
                   toggleSelectedID(index);
                 }}>
                   <div>
@@ -53,9 +55,10 @@ const PrevNext = () => {
                       <div key={index} className="answer">
                         {questionAnswer.answer}
                       </div>
-                    ) : ""
+                    ) : null
                   }
-                  <span className="symbol-button">^</span>
+                  <span>^</span>
+                  
               </div>
             </div>
           ))
