@@ -20,7 +20,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	margin-top:1rem;
-	background-color: rgba(200, 200, 200, 1);
+	background-color: rgba(160, 160, 160, 1);
 	border: 2px solid blue;
 	box-shadow: 0 0 3px blue;
 	border-radius: 5px;
@@ -32,7 +32,7 @@
 {
 	width: 100%;
 	height: auto;
-	background-color: rgb(32, 32, 88);
+	background-color: rgb(28, 28, 28);
 	color: white;
 	border-radius: 15px;
 	padding: 10px 10px;
@@ -40,9 +40,32 @@
 	flex-direction: column;
 	
 }
+.question-child{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top:1rem;
+	background-color: rgba(190, 190, 190, 1);
+	border: 2px solid blue;
+	box-shadow: 0 0 3px blue;
+	border-radius: 5px;
+	width: 100%;
+	padding: 10px 10px;
+}
+.answer-child{
+	width: 100%;
+	height: auto;
+	background-color: rgb(40, 40, 40);
+	color: white;
+	border-radius: 15px;
+	padding: 10px 10px;
+	display: flex;
+	flex-direction: column;
+}
 .children
 {
-	width: 500px;
+	width: 80%;
+	
 	
 } 
 

@@ -22,7 +22,7 @@ const Header = ({text}) => {
       
     
       <div className='lmg'>
-        <img src='/img/logo.jpeg' className='app-logo' alt='not found' width="40" height="40"/>
+        <img src='/img/logo.jpg' className='app-logo' alt='not found' width="60" height="60"/>
         <h1 className='head'><b>OSS CAMEROON</b></h1>
       </div>
       

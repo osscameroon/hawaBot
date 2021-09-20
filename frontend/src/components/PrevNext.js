@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import faq from "./data.json";
 import "./styles/BodyStyle.css";
 
-const Faq = ({faq}) => {
+const Faq = ({faq, parentID, depth = 0}) => {
   let [selectedID, setSelectedID] = useState(-1)
   const toggleSelectedID = useCallback(
     (index) => {
@@ -22,7 +22,7 @@ const Faq = ({faq}) => {
       <div className="questions-frame">
         <div key={index} className="question-answer">
             <div
-              className="question"
+              className={parentID === undefined ? "question" : "question-child"}
               onClick={() =>{
                 toggleSelectedID(index)
               }}
@@ -34,7 +34,9 @@ const Faq = ({faq}) => {
             <div>
             {
               index === selectedID && (
-                <div key={index} className="answer">
+                <div key={index} 
+                className={parentID === undefined ? "answer" : "answer-child"}
+                >
                   {questionAnswer.answer}
                 </div>
               )
@@ -46,7 +48,7 @@ const Faq = ({faq}) => {
           {
             index === selectedID && 
             questionAnswer.children &&
-            <Faq faq={questionAnswer.children}  />
+            <Faq faq={questionAnswer.children} parentID={index} depth={depth++}  />
           }
         
         </div>
