@@ -1,62 +1,26 @@
-[
-    {
-       "id": 0,
-       "text": "Who are oss cameroon owners",
-       "type": "Q",
-       "children": [3]
-    },
-    {
-       "id": 1,
-       "text": "Sanix Darker, Elhmmn, Eric, Yvan, Sherlock Wisdom",
-       "type": "A",
-       "children": [2, 4]
-    },
-    {
-       "id": 2,
-       "text": "About Oss Cameroon",
-       "type": "Q",
-       "children": [4, 5]
-    },
-    {
-       "id": 3,
-       "text": "Open Source Community by Cameroonian developers",
-       "type": "A",
-       "children": []
-    },
-    {
-       "id": 4,
-       "text": "Goals",
-       "type": "Q",
-       "children": [6]
-    },
-    {
-      "id": 5,
-      "text": "Bring developers together, Cultivate the habit of contributing to open source projects in the Cameroonian developer ",
-      "type": "A",
-      "children": []
-    },
-    {
-      "id": 6,
-      "text": "Vision",
-      "type": "Q",
-      "children": []
-    },
-    {
-      "id": 7,
-      "text": "Promote talent and know-how of Cameroonian by using our technical knowledge to ring solutions to problems found in our society ",
-      "type": "Q",
-      "children": []
-    },
-    {
-      "id": 8,
-      "text": "Our target",
-      "type": "Q",
-      "children": []
-    },
-    {
-      "id": 9,
-      "text": "The Cameroon tech community. Both anglophones and francophones",
-      "type": "Q",
-      "children": []
-    }
-  ]
+ [
+      {
+        
+         "text": "who are oss cameroon owners",
+         "answer": "Sanix and Eric",
+         "children": [
+          {"text": "How did they meet", "answer": "on twitter"},
+          {"text": "Why is Sanix so good at programming", "answer": "he likes panda"}
+
+         ]
+      },
+      
+      {
+         "text": "What is their goal",
+         "answer": "They don't know",
+         "children":[
+           {"text": "Vision", "answer": "Promote talent and know-how of Cameroonian developers"},
+           {"text":"Target", "answer":"The Cameroon tech community"}
+         ]
+      },
+      {
+        "text": "Projects",
+        "answer": "Visit github page"
+      }
+      ]
+  
